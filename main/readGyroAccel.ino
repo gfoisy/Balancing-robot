@@ -9,7 +9,7 @@
 void GyroChipSetup(){ /////////////////////////////////////////////////////////////////////////////
   Wire.beginTransmission(GyroChip);
   Wire.write(0x6B);
-  Wire.write(0x1); // hex for 000001 (should there be two more zeros? I am not sure)
+  Wire.write(0x1); // hex for 000001 
   Wire.endTransmission(true);
 
   Wire.beginTransmission(GyroChip);
@@ -25,13 +25,12 @@ void GyroChipSetup(){ //////////////////////////////////////////////////////////
   pitch=0;
   roll=0;
 
-  //pitchOffset; //the offset from global zero and the balancing point of the robot
+  //the offset from global zero and the balancing point of the robot
+  //pitchOffset; 
   rollOffset=0; 
   
   GyroscopeScale=131;  //131 for +-250 deg/s    65.5 for +-500 deg/s
   AccelerometerScale=16384;  //16384 for +-2g    8192 for +-4g
-
-  
   
 
   // variables for "calibrateTheOffset(float angleChange)"
@@ -66,19 +65,16 @@ void gatherData(){ /////////////////////////////////////////////////////////////
 
 
 
-
-
-
 void getAngles(){ /////////////////////////////////////////////////////////////////////////////
   roll=  roll+ (((float)GyY/GyroscopeScale+1.4)/frequency);         
-  pitch= pitch+(((float)GyX/GyroscopeScale+3.5)/frequency);      //should it be GyYdegrees+stuff OR PITCH+Stuff, ya know? where to feed taht data back in
+  pitch= pitch+(((float)GyX/GyroscopeScale+3.5)/frequency);      
   //yaw= yaw+(((float)GyZ/GyroscopeScale+0)/frequency);        
 
   GyYnoRoll=GyYnoRoll+(((float)GyY/GyroscopeScale+1.4)/frequency);
  
   ax= (float)(AcX)/AccelerometerScale-.03;
   ay= (float)(AcY)/AccelerometerScale+0.01;
-  az= (float)(AcZ)/AccelerometerScale+.08; //should calibrate to 1g
+  az= (float)(AcZ)/AccelerometerScale+.08; //calibrate to 1g
 
   
   AcRoll= (180/3.1415926)*atan2(-ax,az);                   // roll calculation

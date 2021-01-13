@@ -34,7 +34,7 @@
       
       PID = error[0]*P;
       PID -= (error[0]-error[1])*D;
-    //  PID+=
+    //  PID+=     // robot balances well without I control. 
       PIDA=PID*ScalingA;
       PIDB=PID*ScalingB;
       PIDFREE=PID;

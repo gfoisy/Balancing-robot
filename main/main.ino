@@ -49,9 +49,15 @@ void loop() {
   motorControl();      
         
                                                                       
-   
+
+
+/////   Troubleshooting and calibration //////
 //  getAnglesTest();
 //  calculatePitchRollTest();
+   
+// calibrateTheOffset(AcZ,AccelerometerScale);
+// calibrateTheOffset(roll,1);
+
   
 //   Serial.print("pitch:"); Serial.print(pitch); Serial.print("\t");
 //   Serial.print("pitchAccel"); Serial.print(AcYdegrees);  Serial.print("\t");
@@ -65,15 +71,10 @@ void loop() {
 //   Serial.print("ARollY:"); Serial.println(AcRoll);  
   
 
-
   //https://diyrobocars.com/2020/05/04/arduino-serial-plotter-the-missing-manual/ how to serial plot better
   
-   
-// calibrateTheOffset(AcZ,AccelerometerScale);
-// calibrateTheOffset(roll,1);
 
 }
-
 
 
 
