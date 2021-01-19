@@ -21,6 +21,7 @@
         ScalingB=1.2;  //amount to scale the motor's reaction by, B is a weaker motor, compensate for it more
         P=70;          //proportional gain
         D=5;          //differential gain
+//        I=0;        // I control
   }
 
 
